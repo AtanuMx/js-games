@@ -23,6 +23,14 @@ label {
     @apply mb-1 inline-block;
 }
 
+.form-group {
+    @apply flex flex-row items-center min-h-7 w-full shadow border border-slate-200 rounded-lg focus:outline-none;
+}
+
+.form-group>input.app-inputs {
+    @apply shadow-none border-none flex-grow;
+}
+
 .app-inputs {
     @apply min-h-7 py-2 px-3 w-full block shadow border border-slate-200 rounded-lg focus:outline-none;
 }
