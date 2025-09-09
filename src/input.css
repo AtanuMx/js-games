@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+:root {
+    --primary: #81c952;
+    --primary-light: #a0e870;
+}
+
+@theme {
+    --color-primary: var(--primary);
+}
+
+.custom-card {
+    @apply bg-white shadow min-h-16 rounded-xl py-3 px-5;
+}
+
+.bg-priamry-gradient {
+    background-color: #a1e870;
+    background: linear-gradient(left, var(--primary), var(--primary-light));
+    background: -webkit-linear-gradient(left, var(--primary), var(--primary-light));
+}
+
+label {
+    @apply mb-1 inline-block;
+}
+
+.app-inputs {
+    @apply min-h-7 py-2 px-3 w-full block shadow border border-slate-200 rounded-lg focus:outline-none;
+}
