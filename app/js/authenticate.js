@@ -54,7 +54,7 @@ myForm && myForm?.addEventListener('submit', (event) => {
         firstname: firstName, // I can do it like this or just call the variable itself, provided I intend to maintain the same name
         lastname: lastName,
         email,
-        password : password.trim() //: atob(password)
+        password : password.trim()
     }
 
     if (userExists(user.email)) {
@@ -230,12 +230,12 @@ let saveActiveUser = (user) => {
     }
 }
 
-let getActiveUser = () => {
-    let user = localStorage.getItem('activeUser');
-    return JSON.parse(user);
-}
+// let getActiveUser = () => {
+//     let user = localStorage.getItem('activeUser');
+//     return JSON.parse(user);
+// }
 
-let logoutUser = () => {
-    localStorage.removeItem('activeUser');
-    localStorage.removeItem('is_login')
-}
+// let logoutUser = () => {
+//     localStorage.removeItem('activeUser');
+//     localStorage.removeItem('is_login')
+// }

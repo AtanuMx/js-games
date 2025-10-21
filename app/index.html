@@ -6,19 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Screen - JS GAMES</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="assets/fa-6/css/all.css">
     <script src="./js/validate.js"></script>
-    <!-- TODO: REMOVE the script below and add store script -->
-    <script>
-        if (user) {
-            localStorage.setItem('activeUser', JSON.stringify(user));
-        }
-    </script>
 </head>
 
-<body>
-    <h1>
-        Hello Indexers
-    </h1>
-</body>
+<body class="bg-slate-100">
+    <!-- Side Bar -->
+    <section class="bg-slate-900 text-white w-52 fixed top-0 -left-52 md:left-0 h-screen flex flex-col justify-between">
+        <!-- Top/ Brand/Site Logo -->
+        <aside class="p-4 border-b border-slate-700">
+            <h2 class="text-sm font-bold">
+                JS GAMES
+            </h2>
+        </aside>
 
+        <!-- Center / Navigations -->
+        <aside class="flex-1 p-4">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Bottom -->
+        <aside class="p-4">
+            <button class="bg-red-500 focus:bg-red-300 rounded-lg text-sm block w-full py-2 px-3" onclick="logoutUser()">
+                <i class="fas fa-sign-out-alt"></i> 
+                Logout
+            </button>
+        </aside>
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="md:ml-52 min-h-screen">
+        <header class="bg-white shadow-sm shadow-slate-200 min-h-8 sticky top-0 py-1 px-4 flex items-center justify-between">
+            <!-- Current Page / Breadcrumb -->
+            <aside>
+                <h2 id="page-title" class="text-sm font-bold">
+                    Dashboard
+                </h2>
+            </aside>
+            <aside>
+                <nav>
+                    <ul class="flex items-center">
+                        <li>
+                            <a href="#" class="block py-1 px-3">
+                                <i class="far fa-bell"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-1 px-3">
+                                <i class="fas fa-headset"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <div class=" py-1 px-3 flex items-center gap-1">
+                                <span class="text-xs font-semibold auth-user-name capitalize" id="auth-user">
+                                    Active User
+                                </span>
+                                <div class="rounded-full h-8 w-8 bg-slate-200">
+                                    <!-- Image Element -->
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+
+        <!-- Main Body -->
+        <main class="py-3 px-5">
+            <section>
+                <h1 class="text-2xl">
+                    Hello <span class="font-bold auth-user-name capitalize"></span>
+                </h1>
+            </section>
+        </main>
+    </section>
+
+
+    <script>
+        // document.getElementById('auth-user').innerText = `${activeUser.firstname} ${activeUser.lastname}`;
+        document.querySelectorAll('.auth-user-name').forEach(element => {
+            element.innerText = `${activeUser.firstname} ${activeUser.lastname}`;
+        });
+        // let nameElements = document.getElementsByClassName('auth-user-name');
+        // for (let i = 0; i < nameElements.length; i++) {
+        //     const element = nameElements[i];
+        //     element.innerText = `${activeUser.firstname} ${activeUser.lastname}`;
+        // }
+        
+    </script>
+</body>
 </html>
